@@ -5,7 +5,7 @@ import { BarChartContext } from '../../context/BarChartContext';
 import { computeHeadingLevel } from '@testing-library/react';
 
 const Filter = () => {
-	const { keys, setFilteredAlbums } = useContext(BarChartContext);
+	const { keys, setSelectedAlbums } = useContext(BarChartContext);
 	// console.log(keys);
 
 	const selectOptions = keys.map(key => {
@@ -13,7 +13,7 @@ const Filter = () => {
 	});
 
 	const handleOnChange = e => {
-		setFilteredAlbums(e);
+		setSelectedAlbums(e);
 	};
 
 	return (

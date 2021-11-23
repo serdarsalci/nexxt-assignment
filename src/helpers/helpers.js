@@ -1,5 +1,4 @@
 /**
- *
  * @param {*} array
  * @param {*} num default 7
  * @returns an array of num elements
@@ -50,8 +49,6 @@ export const groupBy = (array, key) => {
 	}, {});
 };
 
-// export const albumsGroupedByUser = groupBy(albums, 'userId');
-
 /**
  * @param {*} albumSongCountMap
  * @param {*} albums
@@ -66,7 +63,6 @@ export const replaceAlbIdWithName = (albumSongCountMap, albums) => {
 };
 
 /**
- *
  * @param {*} albums all albums from API
  * @param {*} userIds
  * @returns only albums whose userId in userIds array
@@ -75,9 +71,6 @@ export const getSelectUsrAlbumTitles = (albums = [], userIds = []) => {
 	return albums
 		.filter(album => userIds.includes(album.userId))
 		.map(album => album.title);
-	// .map((album, id) => {
-	// 	return { id: album.title };
-	// })
 };
 
 /**

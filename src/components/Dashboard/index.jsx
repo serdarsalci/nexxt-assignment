@@ -7,13 +7,15 @@ import Filter from '../Filter';
 import { BarChartContext } from '../../context/BarChartContext';
 
 const Dashboard = () => {
+	const { data, keys } = useContext(BarChartContext);
 	useEffect(() => {
-		console.log('Dashboard UseEffect called');
+		// console.log('Dashboard UseEffect called');
+		// console.log(data);
+		// console.log(keys);
 		return () => {
 			console.log('Dashboard unmounted');
 		};
 	});
-	const { data, keys } = useContext(BarChartContext);
 
 	return (
 		<div className='dashboard'>
