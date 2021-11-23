@@ -1,5 +1,4 @@
 import './App.css';
-import Loading from './components/Loading/Loading';
 import Dashboard from './components/Dashboard';
 import { BarChartContextProvider } from './context/BarChartContext';
 

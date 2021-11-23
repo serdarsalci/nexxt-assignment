@@ -5,13 +5,11 @@ import '../../utils.css';
 import Filter from '../Filter';
 
 import { BarChartContext } from '../../context/BarChartContext';
+import Spinner from '../Loading/Loading';
 
 const Dashboard = () => {
-	const { data, keys } = useContext(BarChartContext);
+	const { data, keys, isLoading } = useContext(BarChartContext);
 	useEffect(() => {
-		// console.log('Dashboard UseEffect called');
-		// console.log(data);
-		// console.log(keys);
 		return () => {
 			console.log('Dashboard unmounted');
 		};
@@ -24,14 +22,9 @@ const Dashboard = () => {
 				<div className='content'>
 					<div className='header'>
 						<span id='chart-title'>Photos Per Person</span>
-						<div className='filter-container'>
-							<span id='filter-out'>FILTER OUT</span>
-							<div className='filter'>
-								<Filter />
-							</div>
-						</div>
+						<Filter />
 					</div>
-					<BarChart data={data} keys={keys} />
+					{isLoading ? <Spinner /> : <BarChart data={data} keys={keys} />}
 				</div>
 			</div>
 		</div>

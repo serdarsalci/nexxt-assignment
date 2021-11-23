@@ -2,7 +2,7 @@ import React from 'react';
 import Select from 'react-select';
 import { useContext } from 'react';
 import { BarChartContext } from '../../context/BarChartContext';
-import { computeHeadingLevel } from '@testing-library/react';
+import './filter.css';
 
 const Filter = () => {
 	const { keys, setSelectedAlbums } = useContext(BarChartContext);
@@ -17,15 +17,18 @@ const Filter = () => {
 	};
 
 	return (
-		<div>
-			<Select
-				onInputChange={() => {}}
-				onChange={handleOnChange}
-				options={selectOptions}
-				isMulti
-				className='basic-multi-select'
-				classNamePrefix='select'
-			/>
+		<div className='filter-container'>
+			<span id='filter-out'>FILTER OUT</span>
+			<div className='filter'>
+				<Select
+					onInputChange={() => {}}
+					onChange={handleOnChange}
+					options={selectOptions}
+					isMulti
+					className='basic-multi-select'
+					classNamePrefix='select'
+				/>
+			</div>
 		</div>
 	);
 };

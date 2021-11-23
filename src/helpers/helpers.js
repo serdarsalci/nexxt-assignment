@@ -56,7 +56,7 @@ export const groupBy = (array, key) => {
  */
 export const replaceAlbIdWithName = (albumSongCountMap, albums) => {
 	albumSongCountMap.forEach((value, key) => {
-		albumSongCountMap[albums.find(a => a.id == key).title] = value;
+		albumSongCountMap[albums.find(a => a.id === key).title] = value;
 		albumSongCountMap['albumTitle'] = value;
 	});
 	return albumSongCountMap;

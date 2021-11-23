@@ -22,6 +22,7 @@ export const BarChartContextProvider = ({ children }) => {
 	const [albumPhotoCounts, setAlbumPhotoCounts] = useState([]);
 
 	const getDataFromApiSetStates = async () => {
+		setIsLoading(true);
 		const photos = await getPhotos();
 		const albums = await getAlbums();
 		const users = await getUsers();
@@ -32,7 +33,7 @@ export const BarChartContextProvider = ({ children }) => {
 			albums,
 			selectedUserIds
 		);
-		
+
 		// group arrays by userId to prevent iterating through whole array
 		const groupedAlbums = groupBy(albums, 'userId');
 		console.log(groupedAlbums);
@@ -53,6 +54,7 @@ export const BarChartContextProvider = ({ children }) => {
 		setChartData(chartData);
 		setChartDataFiltered(chartData);
 		setKeysFiltered(selectedUsersAlbTitles);
+		setIsLoading(false);
 	};
 
 	useEffect(() => {
@@ -72,7 +74,7 @@ export const BarChartContextProvider = ({ children }) => {
 		const filteredChartData = randomUsers.map(({ id, email }) => {
 			let userAlbums = {};
 			groupedAlbums[id].forEach(alb => {
-				if (alb.userId == id && !selectedAlbums.includes(alb.title)) {
+				if (alb.userId === id && !selectedAlbums.includes(alb.title)) {
 					userAlbums[`${alb.title}`] = albumPhotoCounts.get(alb.id);
 				}
 			});
