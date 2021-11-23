@@ -1,0 +1,112 @@
+.dashboard {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	border: 1px solid rgb(255, 30, 0);
+	align-items: center;
+	justify-content: center;
+	max-width: 1578px;
+	max-height: 1030px;
+}
+
+.dashboard-container {
+	border: 2px solid rgb(17, 0, 255);
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 90%;
+	padding: 2rem 3rem;
+	flex: 1;
+}
+
+.dashboard-container h2 {
+	margin-bottom: 1rem;
+	width: 100%;
+	text-align: left;
+	color: #4f4f4f;
+}
+
+.content {
+	border: 2px solid rgb(0, 255, 136);
+	background-color: white;
+	height: 90%;
+	width: 100%;
+	padding: 2rem 3rem;
+	border-radius: 10px;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	color: #4f4f4f;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	/* flex: 1; */
+}
+
+#chart-title {
+	font-weight: 700;
+	font-size: 24px;
+	flex: 1;
+	text-align: left;
+	color: #4f4f4f;
+	line-height: 33px;
+	white-space: nowrap;
+}
+
+#filter-out {
+	margin-right: 1rem;
+	font-weight: bold;
+	color: #929292;
+	line-height: 22px;
+}
+
+.filter-container {
+	/* width: 60%; */
+	display: flex;
+	align-items: center;
+	justify-content: end;
+	flex-wrap: wrap;
+	flex: 2;
+	max-width: 500px;
+}
+
+.filter {
+	flex: 1;
+}
+
+@media only screen and (max-width: 850px) {
+	.header {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.filter-container {
+		width: 100%;
+		justify-content: space-between;
+		max-width: none;
+		display: inline;
+	}
+
+	#chart-title {
+		margin-bottom: 0.2rem;
+	}
+	#filter-out {
+		display: inline-block;
+		margin-bottom: 0.2rem;
+	}
+}
+
+@media only screen and (max-width: 576px) {
+	.content {
+		padding: 1rem;
+		/* background-color: antiquewhite; */
+		/* background-color: aquamarine; */
+	}
+
+	.dashboard-container {
+		padding: 1rem 1rem;
+		/* flex: 1; */
+		/* overflow-y: scroll; */
+	}
+}
